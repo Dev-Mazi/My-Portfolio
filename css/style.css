@@ -419,6 +419,12 @@ video {
   display: none;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -531,6 +537,10 @@ h1 {
   z-index: 30;
 }
 
+.-z-10 {
+  z-index: -10;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -558,6 +568,22 @@ h1 {
   margin-bottom: -1.25rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -570,12 +596,16 @@ h1 {
   display: none;
 }
 
-.h-\[9\.6rem\] {
-  height: 9.6rem;
-}
-
 .h-\[4rem\] {
   height: 4rem;
+}
+
+.h-72 {
+  height: 18rem;
+}
+
+.h-64 {
+  height: 16rem;
 }
 
 .max-w-\[140rem\] {
@@ -590,12 +620,24 @@ h1 {
   flex-direction: column;
 }
 
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.items-center {
+  align-items: center;
+}
+
 .justify-between {
   justify-content: space-between;
 }
 
 .gap-\[3rem\] {
   gap: 3rem;
+}
+
+.justify-self-start {
+  justify-self: start;
 }
 
 .rounded-full {
@@ -611,8 +653,16 @@ h1 {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .p-4 {
   padding: 1rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .py-\[4rem\] {
@@ -630,12 +680,24 @@ h1 {
   padding-right: 2rem;
 }
 
+.pt-\[4rem\] {
+  padding-top: 4rem;
+}
+
 .text-left {
   text-align: left;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .font-sans {
   font-family: Sevillana, sans-serif;
+}
+
+.font-serif {
+  font-family: Rubik, Georgia;
 }
 
 .text-\[2rem\] {
@@ -646,8 +708,28 @@ h1 {
   font-size: 4rem;
 }
 
+.text-\[1\.5rem\] {
+  font-size: 1.5rem;
+}
+
 .text-\[4\.5rem\] {
   font-size: 4.5rem;
+}
+
+.text-\[1\.2rem\] {
+  font-size: 1.2rem;
+}
+
+.text-\[1\.3rem\] {
+  font-size: 1.3rem;
+}
+
+.leading-4 {
+  line-height: 1rem;
+}
+
+.leading-9 {
+  line-height: 2.25rem;
 }
 
 .tracking-\[\.1rem\] {
@@ -665,6 +747,16 @@ h1 {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity));
 }
 
 .shadow-lg {
@@ -691,8 +783,8 @@ h1 {
   max-width: 120rem;
   padding-top: 3.2rem;
   padding-bottom: 3.2rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .btn-container {
@@ -776,7 +868,15 @@ body:before {
   top: 0;
   bottom: 0;
   background: rgba(6, 6, 6, 0.7);
-  height: 100vh;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+span {
+  z-index: 40;
 }
 
 @media (max-width: 576px) {
@@ -823,7 +923,6 @@ body:before {
 
 .text {
   position: relative;
-  font-size: 5rem;
   animation: slide-up 1.2s;
 }
 
@@ -1057,6 +1156,51 @@ span {
   animation-fill-mode: both;
 }
 
+/* SLIDE-IN-RIGHT */
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+/* FLOATING */
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
 /* BOUNCE */
 
 @keyframes bounceIn {
@@ -1127,6 +1271,10 @@ span {
 }
 
 @media (min-width: 768px) {
+  .md\:z-10 {
+    z-index: 10;
+  }
+
   .md\:my-\[15rem\] {
     margin-top: 15rem;
     margin-bottom: 15rem;
@@ -1134,6 +1282,18 @@ span {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:h-\[50\%\] {
+    height: 50%;
+  }
+
+  .md\:w-\[40rem\] {
+    width: 40rem;
+  }
+
+  .md\:max-w-\[60rem\] {
+    max-width: 60rem;
   }
 
   .md\:flex-row {
@@ -1176,5 +1336,11 @@ span {
 
   .md\:tracking-\[\.5rem\] {
     letter-spacing: .5rem;
+  }
+}
+
+@media (min-width: 976px) {
+  .lg\:flex-row {
+    flex-direction: row;
   }
 }
