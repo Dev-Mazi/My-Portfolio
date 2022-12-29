@@ -17,7 +17,7 @@
       src="https://kit.fontawesome.com/66aa7c98b3.js"
       crossorigin="anonymous"
     ></script>
-    `
+    <script src="js/script.js" defer></script>
   </head>
   <body class="card ">
     <!-- HEADER  -->
@@ -35,7 +35,8 @@
           />
         </div>
         <!-- NAVIGATION MENU -->
-        <nav class="hidden md:flex md:space-x-8">
+        <nav class="">
+          <div class="hidden md:flex  md:space-x-8">
           <!-- nav-links group -->
           <div class="group text-white text-[2rem] hvr-grow">
             <a href="index.html">Home</a>
@@ -62,8 +63,33 @@
               class="mx-2 group-hover:border-b group-hover:border-blue-50 transition-all duration-200"
             ></div>
           </div>
+          </div>  
+
+          <!-- HAMBURGER BTN -->
+
+        <div class="md:hidden">
+          <button
+            id="menu-btn"
+            type="button"
+            class="z-40 block hamburger md:hidden focus:outline-none"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
         </nav>
       </div>
+
+       <!-- MOBILE NAV -->
+
+       <div id="menu-mobile" class="mobile-nav absolute top-0 top-0 left-0 flex items-center justify-between hidden w-full h-[15rem] p-6 space-y-3 text-lg uppercase bg-black bg-opacity-80  text-[1.5rem]">
+        <a href="index.html" class="hover:text-red-300">Home</a>
+        <a href="about.html" class="hover:text-red-300">About</a>
+        <a href="portfolio.html" class="hover:text-red-300">Portfolio</a>
+        <a href="contact.html" class="hover:text-red-300">Contact</a>
+      </div>
+    </div>
     </header>
 
     <!-- PROJECT SECTION -->
